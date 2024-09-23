@@ -1,6 +1,7 @@
 using System;
 
 using R5T.T0131;
+using R5T.T0143;
 using R5T.T0211;
 using R5T.T0211.Extensions;
 
@@ -12,8 +13,12 @@ namespace R5T.Z0054
     public partial interface IXmlDocumentationComments : IValuesMarker
     {
 #pragma warning disable IDE1006 // Naming Styles
+
+        [Ignore]
         public Platform.IXmlDocumentationComments _Platform => Platform.XmlDocumentationComments.Instance;
+
 #pragma warning restore IDE1006 // Naming Styles
+
 
         /// <inheritdoc cref="Platform.IXmlDocumentationComments.Contains_InheritdocElement"/>
         public IXmlDocumentationComment Contains_InheritdocElement => _Platform.Contains_InheritdocElement.ToXmlDocumentationComment();
